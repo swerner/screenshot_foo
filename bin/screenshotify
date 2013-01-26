@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
+
+require 'screenshot_foo'
+
+if File.exists?("./sitemap.yml")
+  pages = ScreenshotFoo::SitemapParser.new(YAML.load_file("./sitemap.yml")).pages
+  ScreenshotFoo::ScreenshotProcessor.new(pages).process
+else
+  puts "You must declare which pages to screenshot in a SITEMAP file"
+end
