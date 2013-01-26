@@ -29,10 +29,10 @@ module ScreenshotFoo
 
     private
     def take_screenshot(page_info)
-      Dir.mkdir("./screenshots/") unless File.exists?("./screenshot_foo/")
+      Dir.mkdir("./screenshot_foo/") unless File.exists?("./screenshot_foo/")
       webdriver = Selenium::WebDriver.for :firefox
       webdriver.get page_info[:url]
-      webdriver.save_screenshot("./screenshots/#{page_info[:file]}.png")
+      webdriver.save_screenshot("./screenshot_foo/#{page_info[:file]}.png")
       webdriver.quit
     end
 
