@@ -1,0 +1,10 @@
+---
+base_url: "http://localhost:3000"
+
+pages:
+  - name: "home"
+    path: "/"
+  - name: "shows"
+    path: "/shows"
+  - name: "test"
+    path: "/test"
